@@ -1,0 +1,25 @@
+extends layout1
+
+block content 
+    .container
+      form(action="/editDetails" method="post")
+        h1 Register 
+        .form-group 
+          .row
+            .col-md-8 
+              label Name
+              input.form-control(type='text' placeholder='Enter first name' name='t1' value=resultData.t1)
+          .row
+            .col-md-8 
+              label Email
+              input.form-control(type='email' placeholder='Enter email' name='t2' value=resultData.t2)
+          .row
+            .col-md-8 
+              label Password
+              input.form-control(type='password' placeholder='Enter password' name='t3' value=resultData.t3)
+          .row 
+            .col-md-8 
+              input.form-control(type="hidden" name="id" value=resultData._id)
+          .row
+            .col-md-4
+              button.btn.btn-info.btn-block(type='submit') Update   

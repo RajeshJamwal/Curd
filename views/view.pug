@@ -1,0 +1,25 @@
+extends layout1 
+
+block content
+    .container-fluid.mt-5 
+        table.table(action="/viewrecord" method="post")
+            tr.table 
+                th name 
+                th email  
+            each res in resultdata 
+
+                tr 
+                    td #{res.t1}
+                    td #{res.t2}  
+                    td 
+                        span 
+                        a(href="/edit?id="+res._id)
+                            i.fa.fa-edit
+                    td 
+                        span 
+                        a(href="/delete?id="+res._id)
+                            i.fa.fa-trash 
+        .row 
+            .col-sm-12 
+                a(href="/")
+                    button.btn.btn-info.btn-block.mx-3(type='button') create record 
